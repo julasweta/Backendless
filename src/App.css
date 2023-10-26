@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  padding: 10px;
+  background-color: aliceblue;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ul {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
+}
+li {
+  list-style: none;
+  width: 20%;
+}
+li a {
+  color: rgb(16, 17, 16);
+  text-decoration: none;
+}
+li a:hover {
+  color: rgb(106, 141, 154);
+  font-weight: 700;
+}
+.active {
+  color: rgb(74, 84, 88);
+  font-weight: 700;
 }
 
-.App-link {
-  color: #61dafb;
+table {
+  border-collapse: collapse;
+  width: 90%;
+  margin: 40px auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+td {
+  border: 2px solid #8b8383;
+  padding: 8px;
+  text-align: center;
+  width: 100px;
+  /* Встановіть бажану ширину комірок, наприклад, 100px */
+}
+tr {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.list tr {
+  background-color: #f3e2e2;
+}
+
+.chart tr {
+  background-color: #c6e0f0;
+}
+
+.table tr {
+  background-color: #c9f0c6;
 }
