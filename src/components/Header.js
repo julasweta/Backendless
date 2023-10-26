@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { apiService } from "../services/ApiServices";
-import { NavLink, useLocation, useNavigate } from "react-router-dom";
-import { AppRoutes } from "../routing/AppRoutes";
+import React, {useEffect, useState} from "react";
+import {NavLink, useLocation, useNavigate} from "react-router-dom";
+import {AppRoutes} from "../routing/AppRoutes";
+import {navService} from "../services/NavigateService";
 
 const Header = () => {
   const [data, setData] = useState(null);
@@ -9,8 +9,7 @@ const Header = () => {
   const location = useLocation().pathname;
 
   useEffect(() => {
-    apiService
-      .get(process.env.REACT_APP_URL_PART)
+    navService.getNav()
       .then((response) => {
         const responseData = response.data;
         setData(responseData);
@@ -30,8 +29,8 @@ const Header = () => {
       <ul>
         {data
           ? data
-              .slice() // Створити копію масиву, щоб не змінювати оригінальний
-              .sort((a, b) => a.order - b.order) // Відсортувати за полем 'order'
+              .slice() 
+              .sort((a, b) => a.order - b.order) 
               .map((item) => (
                 <li key={item.id}>
                   <NavLink

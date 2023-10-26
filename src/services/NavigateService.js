@@ -1,7 +1,7 @@
 import { apiService } from "./ApiServices";
 
-const blogService = {
-  getPosts: () => apiService.get(),
+const navService = {
+  getNav: () => apiService.get(process.env.REACT_APP_URL_PART),
 };
 
-export { blogService };
+export { navService };
